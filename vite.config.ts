@@ -9,6 +9,9 @@ export default async () => {
   return defineConfig({
     plugins: [react()],
     server: {
+      // bind to all interfaces (IPv4 + IPv6). This avoids cases where the dev
+      // server only listens on ::1 and 127.0.0.1 refuses connection.
+      host: true,
       port: 5173
     }
   })
