@@ -33,6 +33,12 @@ const Converter: React.FC = () => {
     setResult(usd)
   }
 
+  const handleClear = () => {
+    setQuetzales('')
+    setResult(null)
+    setError(null)
+  }
+
   return (
     <IonPage>
       <IonHeader>
@@ -56,6 +62,12 @@ const Converter: React.FC = () => {
             Convertir a USD
           </IonButton>
         </div>
+
+          <div style={{ marginTop: 8 }}>
+            <IonButton expand="block" color="secondary" onClick={handleClear}>
+              Limpiar
+            </IonButton>
+          </div>
 
         {error && (
           <IonText color="danger">
